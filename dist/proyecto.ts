@@ -25,12 +25,12 @@ myImage.addEventListener('load', function(){
     let cellBrightness;
 
     //intervalo que toma 2 elementos funcion de llamada para ejecutar y frecuencia en ejecutar
-    /*setInterval(function(){
+    setInterval(function(){
         counter++;
         if (counter % 12 === 0){
             switcher *= -1;
         }
-    }, 500);*/
+    }, 500);
     //pinta la imagen inicinado en las pociciones cero y recorreindo todo lo ancho y lo alto
     ctx.drawImage(myImage, 0, 0, canvas.width, canvas.height);
     const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -102,7 +102,7 @@ myImage.addEventListener('load', function(){
             this.angle += this.speed/20;
             this.size = this.speed * 2.5;
             
-           /*if (switcher === 1){
+           if (switcher === 1){
                 ctx.globalCompositeOperation = 'luminosity';
             } else {
                ctx.globalCompositeOperation = 'soft-light';
@@ -110,7 +110,7 @@ myImage.addEventListener('load', function(){
             if (counter % 22 === 0){
                 this.x = Math.random() * canvas.width;
                 this.y = 0;
-            }*/
+            }
             //calculamos la direccion de las particulas
             this.y -= movement+ Math.cos(this.angle)*2;
             this.x += movement + Math.sin(this.angle) * 2;
